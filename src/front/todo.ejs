@@ -1,0 +1,15 @@
+<h1>simple todo</h1>
+<ul>
+  <% todos.forEach((todo) => { %>
+    <li>
+      <%= todo.content %>
+      <form action="/delete_todo/<%= todo._id %>" method="post">
+      <button type="submit">delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+<form action="/add_todo" method="post">
+  <input type="text" placeholder="learn nodejs" name="todo" required>
+  <button type="submit">add todo</button>
+</form> 
